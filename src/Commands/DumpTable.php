@@ -15,14 +15,14 @@ class DumpTable extends Command
      *
      * @var string
      */
-    protected $signature = 'migrate:dump-table {table} {--s|seed : Also run seeder} {--r|restore : Restore exsisting data}';
+    protected $signature = 'migrate:dump-table {table} {--s|seed : Also run seeder} {--r|restore : Restore existing data}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Truncate the specified table and run migrations';
+    protected $description = 'Update your migration file to database without damaging other tables data';
 
     /**
      * Execute the console command.
