@@ -75,7 +75,7 @@ You can backup any table into a sql file with this command.
 
 ## restore any table into sql file
 
-This command is linked with the backup command. You can restore any table in a sql file with this command.
+This command is linked with the backup command. You can restore that backups table in a sql file with this command.
 
 ```bash
   $ php artisan table:restore {table_name}

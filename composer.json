@@ -30,7 +30,6 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
-        "php": "^7.4|^8.0",
-        "helloarman/dumptable": "dev-main"
+        "php": "^7.4|^8.0"
     }
 }
