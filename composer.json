@@ -1,12 +1,13 @@
 {
     "name": "helloarman/dumptable",
     "description": "This Laravel package updates migration files during development without data loss, allowing seamless modification of table columns while preserving existing records. Ideal for maintaining data integrity during iterative development.",
+    "type": "library",
     "keywords": [
         "helloarman",
         "laravel",
         "dumptable"
     ],
-    "homepage": "",
+    "homepage": "https://github.com/helloarman/dumptable",
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -26,6 +27,10 @@
             ]
         }
     },
-    "minimum-stability": "dev",
-    "require": {}
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.4|^8.0",
+        "helloarman/dumptable": "dev-main"
+    }
 }
