@@ -46,9 +46,6 @@ class RestoreTable extends Command
         // Disable foreign key checks
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
-        // Disable foreign key checks
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-
         // Truncate the table and drop it
         DB::table($table)->truncate();
         Schema::dropIfExists($table);
