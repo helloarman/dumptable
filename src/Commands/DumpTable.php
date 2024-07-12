@@ -35,48 +35,54 @@ class DumpTable extends Command
 
         try {
 
-            if($restore){
-                Artisan::call('table:backup '.$table);
+            if(env('APP_ENV') == 'local' || env('APP_ENV') == 'development' || env('APP_ENV') == 'dev'){
+                if($restore){
+                    Artisan::call('table:backup '.$table);
+                }
+
+                DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
+                DB::table($table)->truncate();
+                Schema::dropIfExists($table);
+
+                $row = DB::table('migrations')->where('migration', 'like', '%create_'.$table.'_table%')->first();
+
+                if ($row) {
+                    DB::table('migrations')->where('id', $row->id)->delete();
+                }
+
+                DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
+                Artisan::call('migrate');
+
+                $this->info("$table has been updated successfully!");
+
+                if($seeder){
+                    $class = Str::studly(Str::singular($table));
+
+                    Artisan::call('db:seed --class='.$class.'Seeder');
+
+                    $this->info("$table data seeded successfully!");
+                }
+
+                if($restore){
+                    Artisan::call('table:restore '.$table);
+
+                    $backupPath = storage_path("backups/{$table}.sql");
+
+                    $this->comment("
+If your data was not restored, there may be an issue.
+If you encounter such an issue, you have a backup file available in the storage.
+
+Backup File: $backupPath
+");
+                }
+            }else{
+                $this->error("Update failed for $table: Please ensure that your APP_ENV is set to 'local', 'development', or 'dev'.");
             }
 
-            // Disable foreign key checks
-            DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-
-            // Truncate the table and drop it
-            DB::table($table)->truncate();
-            Schema::dropIfExists($table);
-
-            // Delete the corresponding migration record
-            $row = DB::table('migrations')->where('migration', 'like', '%create_'.$table.'_table%')->first();
-
-            if ($row) {
-                DB::table('migrations')->where('id', $row->id)->delete();
-            }
-
-            // Enable foreign key checks
-            DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-
-            // Run migrations
-            Artisan::call('migrate');
-
-            // Inform the user of success
-            $this->info("$table has been updated successfully!");
-
-            if($seeder){
-                $class = Str::studly(Str::singular($table));
-
-                Artisan::call('db:seed --class='.$class.'Seeder');
-
-                $this->info("$table data seeded successfully!");
-            }
-
-            if($restore){
-                Artisan::call('table:restore '.$table);
-            }
-
-        } catch (\Exception $e) {
-            // Inform the user of the error
-            $this->error("Failed to update $table: " . $e->getMessage());
+        } catch (\Exception $th) {
+            $this->error("1 Failed to update $table: " . $th->getMessage());
         }
     }
 }
