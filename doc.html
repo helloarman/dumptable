@@ -14,10 +14,10 @@
   <body>
     <div class="doc__bg"></div>
     <nav class="header">
-      <h1 class="logo">Dumptable <span class="logo__thin">Doc</span></h1>
+      <h1 class="logo">Dumptable</h1>
       <ul class="menu">
         <div class="menu__item toggle"><span></span></div>
-        <li class="menu__item"><a href="" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
+        <li class="menu__item"><a href="https://github.com/helloarman/dumptable" class="link link--dark" target="_blank"><i class="fa fa-github"></i> Github</a></li>
         <li class="menu__item"><a href="index.html" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
       </ul>
     </nav>
@@ -33,19 +33,17 @@
       <article class="doc__content">
         <section class="js-section">
           <h3 class="section__title">Get Started</h3>
-          <p>Learn how to configure settings for Scribbler, such as your syntax highlighting preference and the default saving folder location.</p>
+          <p>Welcome to the documentation for the Laravel Migration Enhancement Package. This Composer package is designed to simplify and enhance the migration process in Laravel, providing developers with more efficient tools for managing database schema changes.</p>
           <h3 class="section__title">Installation</h3>
           <div class="code__block code__block--notabs">
             <pre class="code code--block">
               <code>
-                $ scribbler  ——config
-                  {
-                    “encryption”: true, 
-                    “highlighting“: true,
-                    “prettyTable”: false,
-                    “font”: [“Helvetica”, “sans-serif”],
-                    “folder”: “~/Desktop“
-                  }
+                $  composer require helloarman/dumptable
+              </code>
+            </pre>
+            <pre class="code code--block">
+              <code>
+                $  php artisan storage:link
               </code>
             </pre>
           </div>
@@ -57,12 +55,10 @@
             <tr>
               <th>Options</th>
               <th>Value</th>
-              <th>Default</th>
             </tr>
             <tr>
-              <td>encryption</td>
-              <td>encrypt all notes before saving. If turned on, it requires password to open the file.</td>
-              <td>false</td>
+              <td>PHP</td>
+              <td>8.0+</td>
             </tr>
             <tr>
               <td>highlighting</td>
