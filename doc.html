@@ -1,24 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Dumptable Documentation - Effortless Migrations for Laravel</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+    />
 
-    <link rel="stylesheet" href="./assets/global.css">
-    <link rel="stylesheet" href="./assets/doc.css">
+    <link rel="stylesheet" href="./assets/global.css" />
+    <link rel="stylesheet" href="./assets/doc.css" />
   </head>
   <body>
     <div class="doc__bg"></div>
     <nav class="header">
-      <h1 class="logo">Dumptable</h1>
+      <h1 class="logo align-self-center">Dumptable</h1>
       <ul class="menu">
         <div class="menu__item toggle"><span></span></div>
-        <li class="menu__item"><a href="https://github.com/helloarman/dumptable" class="link link--dark" target="_blank"><i class="fa fa-github"></i> Github</a></li>
-        <li class="menu__item"><a href="index.html" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
+        <li class="menu__item">
+          <a
+            href="https://github.com/helloarman/dumptable"
+            class="link link--dark"
+            target="_blank"
+            ><i class="fa fa-github"></i> Github</a
+          >
+        </li>
+        <li class="menu__item">
+          <a href="index.html" class="link link--dark"
+            ><i class="fa fa-home"></i> Home</a
+          >
+        </li>
       </ul>
     </nav>
     <div class="wrapper">
@@ -26,14 +47,31 @@
         <ul>
           <li class="js-btn selected">Get Started</li>
           <li class="js-btn">Configuration</li>
-          <li class="js-btn">Keybindings</li>
-          <li class="js-btn">Issues</li>
+          <li class="js-btn">Features</li>
+          <li class="js-btn">Dumptable Command</li>
+          <li class="js-btn">Backup Table</li>
+          <li class="js-btn">Restore Table</li>
+          <li class="js-btn">Fresh and Seed</li>
+          <li class="js-btn">Align Additional Migrations</li>
+          <li class="js-btn">FAQ</li>
         </ul>
       </aside>
       <article class="doc__content">
         <section class="js-section">
+          <div class="d-flex justify-content-center mb-4">
+            <img
+              style="max-height: 250px"
+              src="./assets/images/dumptable_package_thumbnail.png"
+              alt="table_col"
+            />
+          </div>
           <h3 class="section__title">Get Started</h3>
-          <p>Welcome to the documentation for the Laravel Migration Enhancement Package. This Composer package is designed to simplify and enhance the migration process in Laravel, providing developers with more efficient tools for managing database schema changes.</p>
+          <p>
+            Welcome to the documentation for the Laravel Migration Enhancement
+            Package. This Composer package is designed to simplify and enhance
+            the migration process in Laravel, providing developers with more
+            efficient tools for managing database schema changes.
+          </p>
           <h3 class="section__title">Installation</h3>
           <div class="code__block code__block--notabs">
             <pre class="code code--block">
@@ -49,49 +87,434 @@
           </div>
         </section>
         <section class="js-section">
-          <h3 class="section__title">Configuration</h3>
-          <p>Learn how to configure settings for Scribbler, such as your syntax highlighting preference and the default saving folder location.</p>
+          <h3 class="section__title">Requirement</h3>
           <table id="customers">
             <tr>
               <th>Options</th>
-              <th>Value</th>
+              <th>Version</th>
             </tr>
             <tr>
               <td>PHP</td>
-              <td>8.0+</td>
+              <td>v8.0+</td>
             </tr>
             <tr>
-              <td>highlighting</td>
-              <td>Show syntax highlight on markdown text.</td>
-              <td>true</td>
-            </tr>
-            <tr>
-              <td>prettyTable</td>
-              <td>Render table with Scribbler’s pretty table style.</td>
-              <td>true</td>
+              <td>Laravel</td>
+              <td>v7+</td>
             </tr>
           </table>
-          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
           <hr />
         </section>
         <section class="js-section">
-          <h3 class="section__title">Keybindings</h3>
-          <p>Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel inani aeterno ad. Facer oratio ex per. At eam movet verear, in sea brute patrioque disputando, usu nonumes torquatos an. Ex his quaerendum intellegebat, ut vel homero accusam. Eum at debet tibique, in vocibus temporibus adversarium sed. Porro verear eu vix, ne usu tation vituperata.</p>
-          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
-          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
+          <h1 class="section__title fw-bold">Features</h1>
+          <p>Here are all of the feature list of the package.</p>
+          <br />
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Update Table with Dumptable Command:</h3>
+          <h6 class="fw-bold mt-4">Command:</h6>
+          <pre class="code code--block">
+              <code>
+                $  php artisan table:dump {table_name}
+              </code>
+          </pre>
+          <h6 class="fw-bold mt-4">Description:</h6>
+          <p>
+            This command updates a table with its corresponding migration file.
+            It is particularly useful during the development phase when you need
+            to update a specific column in a single table without affecting
+            other tables. Unlike php artisan migrate:fresh or php artisan
+            migrate:refresh, this command only affects the specified table.
+          </p>
+          <div class="alert alert-info" role="alert">
+            <b>⚡ Note:</b>
+            <p class="pt-3">
+              Alternatively, you can use
+              <code>php artisan migrate:dump-table {table_name}</code> to
+              execute this command.
+            </p>
+          </div>
+          <h6 class="fw-bold mt-4">Flags:</h6>
+          <table id="customers">
+            <tbody>
+              <tr>
+                <th>Flag</th>
+                <th>Workings</th>
+              </tr>
+              <tr>
+                <td>-s or --seed</td>
+                <td>
+                  Migrate and run the seeder file after updating the migration
+                  file.
+                </td>
+              </tr>
+              <tr>
+                <td>-r or --restore</td>
+                <td>
+                  Update the columns without removing existing data from the
+                  table.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h6 class="fw-bold mt-4">Command:</h6>
+          <pre class="code code--block">
+            <code>
+              $  php artisan table:dump {table_name} --restore
+            </code>
+          </pre>
+          <div class="alert alert-warning" role="alert">
+            <b>⚠ Warning:</b>
+            <p class="pt-3">
+              This --restore or -r feature is in beta. Currently, it cannot
+              handle a large amount of data (I tested with 20,000+ entries, and
+              it worked perfectly). Additionally, if this table is used as a
+              foreign key in another table, it may fail. However, don't worry, a
+              backup file will be saved in the storage folder if it fails. Use
+              this feature only during development.
+            </p>
+          </div>
+          <h6 class="fw-bold mt-4">Command:</h6>
+          <pre class="code code--block">
+            <code>
+              $  php artisan table:dump {table_name} --seed
+            </code>
+          </pre>
+          <div class="alert alert-info" role="alert">
+            <b>⚡ Note:</b>
+            <p class="pt-3">
+              By default, --seed or -s it uses the
+              <code>ModelNameSeeder</code> class name structure. To use a
+              different seeder file name, use the <code>--class</code> flag.
+            </p>
+          </div>
+
+          <h6 class="fw-bold mt-4">Flags:</h6>
+          <table id="customers">
+            <tbody>
+              <tr>
+                <th>Flag</th>
+                <th>Workings</th>
+              </tr>
+              <tr>
+                <td>--class</td>
+                <td>To use a different seeder file name</td>
+              </tr>
+            </tbody>
+          </table>
+          <h6 class="fw-bold mt-4">Command:</h6>
+          <pre class="code code--block">
+            <code>
+              $  php artisan table:dump {table_name} --seed --class={seeder_class_name}
+            </code>
+          </pre>
           <hr />
         </section>
         <section class="js-section">
-          <h3 class="section__title">Issues</h3>
-          <p>Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel inani aeterno ad. Facer oratio ex per. At eam movet verear, in sea brute patrioque disputando, usu nonumes torquatos an. Ex his quaerendum intellegebat, ut vel homero accusam. Eum at debet tibique, in vocibus temporibus adversarium sed. Porro verear eu vix, ne usu tation vituperata.</p>
-          <p>Malis percipitur an pro. Pro aperiam persequeris at, at sonet sensibus mei, id mea postulant definiebas concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates suavitate vituperatoribus.</p>
+          <h3 class="section__title">Backup Table Data:</h3>
+          <h6 class="fw-bold mt-4">Command:</h6>
+          <pre class="code code--block">
+              <code>
+                $  php artisan table:backup {table_name}
+              </code>
+          </pre>
+          <h6 class="fw-bold mt-4">Description:</h6>
+          <p>
+            This command creates a backup SQL file of the specified table in the
+            <b>storage/backups</b> folder.
+          </p>
+          <hr />
         </section>
+        <section class="js-section">
+          <h3 class="section__title">Restore Table Data:</h3>
+          <h6 class="fw-bold mt-4">Command:</h6>
+          <pre class="code code--block">
+              <code>
+                $  php artisan table:backup {table_name}
+              </code>
+          </pre>
+          <h6 class="fw-bold mt-4">Description:</h6>
+          <p>This command restores the SQL file data to the specified table.</p>
+          <h6 class="fw-bold mt-4">Flags:</h6>
+          <table id="customers">
+            <tbody>
+              <tr>
+                <th>Flag</th>
+                <th>Workings</th>
+              </tr>
+              <tr>
+                <td>-d or --delete</td>
+                <td>Delete the SQL file after restoring the data.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h6 class="fw-bold mt-4">Command:</h6>
+          <pre class="code code--block">
+            <code>
+              $  php artisan table:restore {table_name} --delete
+            </code>
+          </pre>
+          <hr />
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Fresh and Seed Data:</h3>
+          <h6 class="fw-bold mt-4">Command:</h6>
+          <pre class="code code--block">
+              <code>
+                $  php artisan table:fresh-seed {table_name}
+              </code>
+          </pre>
+          <h6 class="fw-bold mt-4">Description:</h6>
+          <p>
+            This command seeds data into the specified table, deleting previous
+            data. It is useful for resetting table data during development.
+          </p>
+          <div class="alert alert-info" role="alert">
+            <b>⚡ Note:</b>
+            <p class="pt-3">
+              By default, it uses the <code>ModelNameSeeder</code> class name
+              structure. To use a different seeder file name, use the
+              <code>--class</code> flag.
+            </p>
+          </div>
+
+          <h6 class="fw-bold mt-4">Flags:</h6>
+          <table id="customers">
+            <tbody>
+              <tr>
+                <th>Flag</th>
+                <th>Workings</th>
+              </tr>
+              <tr>
+                <td>--class</td>
+                <td>To use a different seeder file name</td>
+              </tr>
+            </tbody>
+          </table>
+          <h6 class="fw-bold mt-4">Command:</h6>
+          <pre class="code code--block">
+            <code>
+              $  php artisan table:dump-seed {table_name} --class={seeder_class_name}
+            </code>
+          </pre>
+          <hr />
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Align Additional Migration File:</h3>
+          <h6 class="fw-bold mt-4">Command:</h6>
+          <pre class="code code--block">
+              <code>
+                $  php artisan table:col {type} {column_name} {table}
+              </code>
+          </pre>
+          <h6 class="fw-bold mt-4">Description:</h6>
+          <p>
+            This command simplifies the process of updating a migration file in
+            a production environment. Instead of creating a new migration file
+            with the current date, it aligns the new file immediately after the
+            main migration file for the table. This makes it easier to find and
+            manage migration files, keeping the structure well-organized.
+          </p>
+
+          <h6 class="fw-bold mt-4">Screenshot:</h6>
+          <div class="d-flex justify-content-center">
+            <img
+              src="./assets/images/dumptable_new_migration.png"
+              alt="table_col"
+            />
+          </div>
+
+          <h6 class="fw-bold mt-4">Command and Output File Naming Examples:</h6>
+          <table id="customers">
+            <tbody>
+              <tr>
+                <th>Command</th>
+                <th>Migration File Name</th>
+              </tr>
+              <tr>
+                <td>
+                  <code class="text-muted"
+                    >$ php artisan table:col add type services</code
+                  >
+                </td>
+                <td>
+                  <code>2023_04_28_205611_add_type_to_users_table.php</code>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="text-muted"
+                    >$ php artisan table:col update type services</code
+                  >
+                </td>
+                <td>
+                  <code>2023_04_28_205612_update_type_to_users_table.php</code>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="text-muted"
+                    >$ php artisan table:col remove short_description
+                    services</code
+                  >
+                </td>
+                <td>
+                  <code
+                    >2023_04_28_205613_remove_short_description_to_users_table.php</code
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" class="text-center">
+                  <code class="text-muted">and so on...</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <h6 class="fw-bold mt-4">Command:</h6>
+          <pre class="code code--block">
+            <code>
+              $  php artisan table:dump-seed {table_name} --class={seeder_class_name}
+            </code>
+          </pre>
+          <hr />
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">FAQ:</h3>
+          <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="faq-1">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          What is the purpose of php artisan make:dump-table {table_name} command?
+                      </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="faq-1" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                          This command updates a specific table's migration file without affecting other tables, ideal for development phase updates.
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="faq-2">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-8" aria-expanded="false" aria-controls="faq-8">
+                          How does the -s or --seed flag work with make:dump-table command?
+                      </button>
+                  </h2>
+                  <div id="faq-8" class="accordion-collapse collapse" aria-labelledby="faq-2" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                          Adding -s or --seed runs migrations and seeds the database after updating the migration file.
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="faq-3">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-9" aria-expanded="false" aria-controls="faq-9">
+                          What is the function of php artisan table:backup {table_name}?
+                      </button>
+                  </h2>
+                  <div id="faq-9" class="accordion-collapse collapse" aria-labelledby="faq-3" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                          This command creates a backup SQL file for the specified table in the storage/backups folder.
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="faq-4">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-10" aria-expanded="false" aria-controls="faq-10">
+                          How can I restore a table using php artisan table:restore {table_name}?
+                      </button>
+                  </h2>
+                  <div id="faq-10" class="accordion-collapse collapse" aria-labelledby="faq-4" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                          Use this command to restore a SQL file backup back into the specified database table.
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="faq-5">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-11" aria-expanded="false" aria-controls="faq-11">
+                          When should I use the -d or --delete flag with table:restore command?
+                      </button>
+                  </h2>
+                  <div id="faq-11" class="accordion-collapse collapse" aria-labelledby="faq-5" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                          Adding -d or --delete removes the SQL backup file after successfully restoring its data into the table.
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="faq-6">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-12" aria-expanded="false" aria-controls="faq-12">
+                          What does php artisan table:dump-seed {table_name} do?
+                      </button>
+                  </h2>
+                  <div id="faq-12" class="accordion-collapse collapse" aria-labelledby="faq-6" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                          This command seeds data into a table, replacing previous data, offering a clean slate for development or testing.
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="faq-7">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-13" aria-expanded="false" aria-controls="faq-13">
+                          How can I specify a custom seeder class with table:dump-seed command?
+                      </button>
+                  </h2>
+                  <div id="faq-13" class="accordion-collapse collapse" aria-labelledby="faq-7" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                          Use --class=YourSeederFileName to specify a different seeder file structure than the default ModelnameSeeder.
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="faq-8">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-14" aria-expanded="false" aria-controls="faq-14">
+                          What is the purpose of php artisan table:col {type} {column_name} {table} command?
+                      </button>
+                  </h2>
+                  <div id="faq-14" class="accordion-collapse collapse" aria-labelledby="faq-8" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                          This command simplifies adding new migration files after the main table migration, ensuring a structured approach.
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="faq-9">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-15" aria-expanded="false" aria-controls="faq-15">
+                          Why use table:col command in production?
+                      </button>
+                  </h2>
+                  <div id="faq-15" class="accordion-collapse collapse" aria-labelledby="faq-9" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                          It facilitates easy management of migration files after a project goes live, maintaining a clear and organized file structure.
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item">
+                  <h2 class="accordion-header" id="faq-10">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-16" aria-expanded="false" aria-controls="faq-16">
+                          How does table:col ensure organized migration files?
+                      </button>
+                  </h2>
+                  <div id="faq-16" class="accordion-collapse collapse" aria-labelledby="faq-10" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                          By appending new migration files in sequence after the main table migration, keeping related migrations together for easy reference.
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <hr />
+      </section>
+      
       </article>
     </div>
 
-    <footer class="footer">Scribbler is a free HTML template created exclusively for <a href="https://tympanus.net/codrops/" target="_blank" class="link link--light">Codrops</a>.</footer>
+    <footer class="footer">&copy; 2024. All rights reserved.</footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
     <script src="./assets/scribbler.js"></script>
   </body>
 </html>
