@@ -123,3 +123,28 @@ window.addEventListener('load', function(){
   icon.addEventListener('click', showNav);
 });
 
+// Git 
+async function fetchContributors() {
+  const repoOwner = 'helloarman'; // Replace with your GitHub username
+  const repoName = 'dumptable'; // Replace with your repository name
+  const url = `https://api.github.com/repos/${repoOwner}/${repoName}/contributors`;
+
+  try {
+      const response = await fetch(url);
+      const contributors = await response.json();
+      const contributorsList = document.getElementById('contributors-list');
+
+      contributors.forEach(contributor => {
+          const listItem = document.createElement('li');
+          listItem.innerHTML = `<a href="${contributor.html_url}" target="_blank">
+                                  <img src="${contributor.avatar_url}" alt="${contributor.login}" width="50" height="50">
+                                  ${contributor.login}
+                                </a>`;
+          contributorsList.appendChild(listItem);
+      });
+  } catch (error) {
+      console.error('Error fetching contributors:', error);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', fetchContributors);
