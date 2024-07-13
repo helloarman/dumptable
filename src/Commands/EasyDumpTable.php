@@ -8,14 +8,14 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Artisan;
 
-class DumpTable extends Command
+class EasyDumpTable extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'migrate:dump-table {table} {--s|seed : Also run seeder} {--r|restore : Restore existing data} {--class= : Specify the class name of the seeder}';
+    protected $signature = 'table:dump {table} {--s|seed : Also run seeder} {--r|restore : Restore existing data}';
 
     /**
      * The console command description.
@@ -32,7 +32,6 @@ class DumpTable extends Command
         $table = $this->argument('table');
         $seeder = $this->option('seed');
         $restore = $this->option('restore');
-        $seed_class = $this->option('class');
 
         try {
 
@@ -59,9 +58,9 @@ class DumpTable extends Command
                 $this->info("$table has been updated successfully!");
 
                 if($seeder){
-                    $class = $seed_class ? $seed_class : Str::studly(Str::singular($table)).'Seeder';
+                    $class = Str::studly(Str::singular($table));
 
-                    Artisan::call('db:seed --class='.$class);
+                    Artisan::call('db:seed --class='.$class.'Seeder');
 
                     $this->info("$table data seeded successfully!");
                 }
