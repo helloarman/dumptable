@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Helloarman\Dumptable\Commands;
 
-use Illuminate\Support\Str;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Artisan;
 
 class NextMigrationFile extends Command
 {
@@ -53,7 +51,6 @@ class NextMigrationFile extends Command
 
                 $filename = preg_replace('/(\d+)_(create_\w+_table)/', $paddedNumericPart . "_$tableName", $row->migration);
             }
-            dd($filename);
 
             $new_filename = str_replace('create', $type . '_' . $column . '_to', $filename . '.php');
 

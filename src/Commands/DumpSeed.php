@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace Helloarman\Dumptable\Commands;
 
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;
