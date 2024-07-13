@@ -1,23 +1,95 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-      <meta charset="utf-8">
-      <meta name="description" content="">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Scribbler - a codding landing page template for codrops</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
-      <link rel="stylesheet" href="./assets/global.css">
-      <link rel="stylesheet" href="./assets/landing.css">
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enhanced Laravel Migrations Package Documentation</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+    />
+    <link rel="stylesheet" href="./assets/global.css" />
+    <link rel="stylesheet" href="./assets/landing.css" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="title" content="Enhanced Laravel Migrations Package Documentation">
+    <meta name="description" content="Discover the Enhanced Laravel Migrations Package, a lightweight Composer package that enhances migration functionalities for Laravel, making development and production processes more efficient.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://helloarman.github.io/dumptable/">
+    <meta property="og:title" content="Enhanced Laravel Migrations Package Documentation">
+    <meta property="og:description" content="Discover the Enhanced Laravel Migrations Package, a lightweight Composer package that enhances migration functionalities for Laravel, making development and production processes more efficient.">
+    <meta property="og:image" content="./assets/images/meta_img.img">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://helloarman.github.io/dumptable/">
+    <meta property="twitter:title" content="Enhanced Laravel Migrations Package Documentation">
+    <meta property="twitter:description" content="Discover the Enhanced Laravel Migrations Package, a lightweight Composer package that enhances migration functionalities for Laravel, making development and production processes more efficient.">
+    <meta property="twitter:image" content="./assets/images/meta_img.img">
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": "Enhanced Laravel Migrations Package",
+        "description": "A lightweight Composer package for Laravel that enhances migration functionalities, making development and production processes more efficient.",
+        "url": "https://github.com/your-repo/enhanced-laravel-migrations",
+        "version": "1.0.0",
+        "programmingLanguage": "PHP",
+        "license": "https://opensource.org/licenses/MIT",
+        "creator": {
+          "@type": "Person",
+          "name": "Your Name",
+          "url": "https://yourwebsite.com"
+        },
+        "codeRepository": "https://github.com/your-repo/enhanced-laravel-migrations",
+        "keywords": [
+          "Laravel",
+          "Composer Package",
+          "Migrations",
+          "PHP",
+          "Database"
+        ],
+        "softwareRequirements": ["PHP >= 7.4", "Laravel >= 8.0"],
+        "featureList": [
+          "make:dump-table - Update table with migration file without affecting other tables",
+          "table:backup - Create a backup SQL file of the specified table",
+          "table:restore - Restore the SQL file to the database table with optional delete flag",
+          "table:dump-seed - Seed data into the table, replacing previous data",
+          "table:col - Simplify adding new migration files after the main table migration"
+        ],
+        "releaseNotes": "Initial release with features to enhance Laravel migration functionalities."
+      }
+    </script>
   </head>
   <body>
     <nav>
       <div class="logo"></div>
       <ul class="menu">
         <div class="menu__item toggle"><span></span></div>
-        <li class="menu__item"><a href="doc.html" class="link link--dark"><i class="fa fa-book"></i> Documentation</a></li>
-        <li class="menu__item"><a href="https://github.com/helloarman/dumptable" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
+        <li class="menu__item">
+          <a href="doc.html" class="link link--dark"
+            ><i class="fa fa-book"></i> Documentation</a
+          >
+        </li>
+        <li class="menu__item">
+          <a
+            href="https://github.com/helloarman/dumptable"
+            class="link link--dark"
+            ><i class="fa fa-github"></i> Github</a
+          >
+        </li>
       </ul>
     </nav>
     <div class="hero">
@@ -48,46 +120,93 @@
       <div class="feature">
         <div class="feature__item">
           <h3 class="section__title">Fast & Light</h3>
-          <p>Enjoy enhanced migration functionalities with a lightweight package that integrates seamlessly with your Laravel project.</p>
+          <p>
+            Enjoy enhanced migration functionalities with a lightweight package
+            that integrates seamlessly with your Laravel project.
+          </p>
         </div>
         <div class="feature__item">
           <h3 class="section__title">Easy to Install</h3>
-          <p>Quickly install this package via Composer, ensuring a hassle-free setup and immediate use in your Laravel application.</p>
+          <p>
+            Quickly install this package via Composer, ensuring a hassle-free
+            setup and immediate use in your Laravel application.
+          </p>
         </div>
         <div class="feature__item">
           <h3 class="section__title">Simplify Table Updates</h3>
-          <p>Update a single table's migration file without affecting other tables, making development smoother and more efficient.</p>
+          <p>
+            Update a single table's migration file without affecting other
+            tables, making development smoother and more efficient.
+          </p>
         </div>
         <div class="feature__item">
           <h3 class="section__title">Conditional Seeding</h3>
-          <p>Run seeders and preserve existing data by using specific flags, ensuring your tables remain up-to-date without data loss.</p>
+          <p>
+            Run seeders and preserve existing data by using specific flags,
+            ensuring your tables remain up-to-date without data loss.
+          </p>
         </div>
         <div class="feature__item">
           <h3 class="section__title">Backup Table Data</h3>
-          <p>Securely back up your table data to the storage/backups folder, providing easy restoration and peace of mind.</p>
+          <p>
+            Securely back up your table data to the storage/backups folder,
+            providing easy restoration and peace of mind.
+          </p>
         </div>
         <div class="feature__item">
-          <h3 class="section__title">Quick Data Reset</h3>
-          <p>Manage production migration files sequentially, making file management and updates more straightforward. </p>
+          <h3 class="section__title">Quick Aligned Migrations</h3>
+          <p>
+            Add new migrations after the main migration file without affecting other migrations.
+          </p>
         </div>
       </div>
       <div class="keybinding">
         <ul class="keybinding__detail">
           <h3 class="keybinding__title">Default Commands</h3>
-          <li>Deletes all data from other tables <span class="keybinding__label">migrate:fresh</span></li>
-          <li>Runs the seed file without removing previous table data <span class="keybinding__label">db:seed --class=ClassName</span></li>
-          <li>Adds a new migration file at the end of all files <span class="keybinding__label">make:migration add_xx_x</span></li>
-          <li>No command for backing up a table <span class="keybinding__label">no command</span></li>
-        </ul>
-        
-        <ul class="keybinding__detail">
-          <h3 class="keybinding__title">Dumptable Commands</h3>
-          <li><span class="keybinding__label">table:dump ..</span> Only affects the single table</li>
-          <li><span class="keybinding__label">table:dump-seed ..</span> Removes previous seed data and updates with new seed data</li>
-          <li><span class="keybinding__label">table:col ..</span> Adds new migration file after the existing migration file</li>
-          <li><span class="keybinding__label">table:backup ..</span> Creates a backup SQL file of the table </li>
+          <li>
+            Deletes all data from other tables
+            <span class="keybinding__label">migrate:fresh</span>
+          </li>
+          <li>
+            Runs the seed file without removing previous table data
+            <span class="keybinding__label">db:seed --class=ClassName</span>
+          </li>
+          <li>
+            Adds a new migration file at the end of all files
+            <span class="keybinding__label">make:migration add_xx_x</span>
+          </li>
+          <li>
+            No command for backing up a table
+            <span class="keybinding__label">no command</span>
+          </li>
+          <li>
+            Adds a new migration file after all files
+            <span class="keybinding__label">make:migration add_xx_to_yy_table</span>
+          </li>
         </ul>
 
+        <ul class="keybinding__detail">
+          <h3 class="keybinding__title">Dumptable Commands</h3>
+          <li>
+            <span class="keybinding__label">table:dump ..</span> Only affects
+            the single table
+          </li>
+          <li>
+            <span class="keybinding__label">table:dump-seed ..</span> Removes
+            previous seed data and updates with new seed data
+          </li>
+          <li>
+            <span class="keybinding__label">table:col ..</span> Adds new
+            migration file after the existing migration file
+          </li>
+          <li>
+            <span class="keybinding__label">table:backup ..</span> Creates a
+            backup SQL file of the table
+          </li>
+          <li>
+            <span class="keybinding__label">table:col aa xx yy</span> Adds a new migration file next to the main migration file.
+          </li>
+        </ul>
       </div>
       <div class="callout">
         <p>Read our documentation for advanced keybindings and customization</p>
@@ -128,7 +247,7 @@
             </ul>
           </div>
         </div>
-        
+
         <!-- <div class="changelog__callout">
           <a href="#" class="button--secondary">Checkout Full Log</a>
         </div> -->
@@ -136,7 +255,9 @@
     </div>
     <footer class="footer">&copy; 2024. All rights reserved.</footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
     <script src="./assets/scribbler.js"></script>
   </body>
 </html>
