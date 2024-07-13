@@ -3,6 +3,7 @@
 
 The Laravel Migration Updater package is a development tool designed to streamline the process of updating migration files without losing existing table data. This package is particularly useful for developers who need to modify table columns during development while preserving the integrity of the data already present.
 
+### Full Documentation: https://helloarman.github.io/dumptable
 
 ## Package For
 
@@ -27,12 +28,12 @@ Link storage folder
 
 In Laravel, updating a migration typically requires altering the entire table, which can result in the loss of data in other tables. This can be problematic if you have valuable data stored in those tables. This package allows you to update a single migration file for a specific table without affecting data in other tables, ensuring data integrity across your database.
 
-## Migrate without hamper any other table - migrate:dump-table
+## Migrate without hamper any other table - table:dump
 
 With this command, you can update a specific migration file without affecting the data in other tables. Simply ensure that you correctly specify your table name.
 
 ```bash
-  $ php artisan migrate:dump-table {table_name} 
+  $ php artisan table:dump {table_name} 
 ```
 
 ## add -s or --seed flag for migrate with seed file
@@ -40,13 +41,13 @@ With this command, you can update a specific migration file without affecting th
 With this command, you can migrate data with seeding.
 
 ```bash
-  $ php artisan migrate:dump-table {table_name} --seed
+  $ php artisan table:dump {table_name} --seed
 ```
 
 or
 
 ```bash
-  $ php artisan migrate:dump-table {table_name} --s
+  $ php artisan table:dump {table_name} --s
 ```
 
 Note: Name your seeder file with this convention: ModelNameSeeder.php
@@ -56,13 +57,13 @@ Note: Name your seeder file with this convention: ModelNameSeeder.php
 This is the magical one. with this you can update migration file without affecting the data in that table. It will store the data on that table as it is and update the migration column to the table only.
 
 ```bash
-  $ php artisan migrate:dump-table {table_name} --restore
+  $ php artisan table:dump {table_name} --restore
 ```
 
 or
 
 ```bash
-  $ php artisan migrate:dump-table {table_name} --r
+  $ php artisan table:dump {table_name} --r
 ```
 
 ## backup any table into sql file
@@ -79,6 +80,22 @@ This command is linked with the backup command. You can restore that backups tab
 
 ```bash
   $ php artisan table:restore {table_name}
+```
+
+## Fresh and Seed Data
+
+This command seeds data into the specified table, deleting previous data. It is useful for resetting table data during development.
+
+```bash
+  $ Align Additional Migration File
+```
+
+## Fresh and Seed Data
+
+This command simplifies the process of updating a migration file in a production environment. Instead of creating a new migration file with the current date, it aligns the new file immediately after the main migration file for the table. This makes it easier to find and manage migration files, keeping the structure well-organized.
+
+```bash
+  $ php artisan table:col {type} {column_name} {table}
 ```
 
 ## Badges
