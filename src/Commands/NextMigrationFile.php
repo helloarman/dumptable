@@ -37,7 +37,7 @@ class NextMigrationFile extends Command
             $last_added_row = DB::table('migrations')->where('migration', 'like', '%_to_' . $table . '_table%')->orderBy('id', 'desc')->first();
             $matches_index[1] = '';
             if(isset($last_added_row)){
-                preg_match('/(\d{6})_('.$type.')_([\w_]+_to_\w+_table)/', $last_added_row->migration, $matches_index);
+                $matches_index = $this->extractParts($last_added_row->migration);
             }
 
             preg_match('/(\d+)_(create_\w+_table)/', $row->migration, $matches);
@@ -45,7 +45,7 @@ class NextMigrationFile extends Command
                 $numericPart = $matches[1];
                 $tableName = $matches[2];
 
-                $nextNumericPart = $matches_index[1] == '' ? (int)$numericPart + 1 : (int)$matches_index[1] + 1;
+                $nextNumericPart = $matches_index[0] == '' ? (int)$numericPart + 1 : (int)$matches_index[0] + 1;
 
                 $paddedNumericPart = str_pad($nextNumericPart, strlen($numericPart), '0', STR_PAD_LEFT);
 
@@ -113,5 +113,21 @@ TEMP;
         $snakeCaseString = preg_replace('/([a-z])([A-Z])/', '$1_$2', $replacedString);
 
         return $snakeCaseString;
+    }
+    protected function extractParts($string)
+    {
+         // Step 1: Split the string by underscores
+        $parts = explode('_', $string);
+
+        // Step 2: Find the index of the 'to' segment which indicates the start of the table name
+        $toIndex = array_search('to', $parts);
+
+        // Step 3: Extract the relevant parts
+        $timestamp = $parts[3];
+        $operation = implode('_', array_slice($parts, 4, $toIndex - 4)); // Combine all parts between timestamp and 'to'
+        $table = str_replace('_table', '', $parts[$toIndex + 1]);
+
+        // Step 4: Return the extracted parts as an array
+        return [$timestamp, $operation, $table];
     }
 }
