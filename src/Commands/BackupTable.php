@@ -43,7 +43,7 @@ class BackupTable extends Command
                 $this->error("Failed to backup table '{$table}'.");
             }
         } catch (\Throwable $th) {
-            $this->error("2 Failed to update $table: " . $th->getMessage());
+            $this->error("Failed to update table: " . $th->getMessage());
         }
     }
 }

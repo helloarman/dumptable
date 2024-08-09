@@ -67,16 +67,23 @@ class RestoreTable extends Command
                 DB::table($table)->truncate();
                 $response = DB::table($table)->insert($data);
 
+                if ($response) {
+                    $this->info("Table $table was restored successfully.");
+                }
+
                 $backupPath = storage_path("backups/{$table}.sql");
 
                 if (file_exists($backupPath) && $delete) {
                     unlink($backupPath);
+                    $this->info("Backup file for $table was deleted successfully.");
                 } else {
-                    $this->error("Failed to update $table: ile does not exist.");
+                    if($delete){
+                        $this->error("Failed to delete backup file for $table: File does not exist.");
+                    }
                 }
             }
         } catch (\Throwable $th) {
-            $this->error("3 Failed to update $table: " . $th->getMessage());
+            $this->error("Failed to update $table: " . $th->getMessage());
         }
     }
 }
