@@ -45,7 +45,7 @@ class NextMigrationFile extends Command
                 $numericPart = $matches[1];
                 $tableName = $matches[2];
 
-                $nextNumericPart = $matches_index[0] == '' ? (int)$numericPart + 1 : (int)$matches_index[0] + 1;
+                $nextNumericPart = $matches_index[1] == '' ? (int)$numericPart + 1 : (int)$matches_index[0] + 1;
 
                 $paddedNumericPart = str_pad($nextNumericPart, strlen($numericPart), '0', STR_PAD_LEFT);
 
