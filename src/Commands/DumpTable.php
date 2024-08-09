@@ -35,7 +35,6 @@ class DumpTable extends Command
         $seed_class = $this->option('class');
 
         try {
-
             if(env('APP_ENV') == 'local' || env('APP_ENV') == 'development' || env('APP_ENV') == 'dev'){
                 if($restore){
                     Artisan::call('table:backup '.$table);
@@ -59,11 +58,14 @@ class DumpTable extends Command
                 $this->info("$table has been updated successfully!");
 
                 if($seeder){
-                    $class = $seed_class ? $seed_class : Str::studly(Str::singular($table)).'Seeder';
-
-                    Artisan::call('db:seed --class='.$class);
-
-                    $this->info("$table data seeded successfully!");
+                    if($seed_class){
+                        Artisan::call('db:seed --class='.$seed_class);
+                        $this->info("$seed_class data seeded successfully!");
+                    }else{
+                        $class = Str::studly(Str::singular($table));
+                        Artisan::call('db:seed --class='.$class.'Seeder');
+                        $this->info("$table data seeded successfully!");
+                    }
                 }
 
                 if($restore){

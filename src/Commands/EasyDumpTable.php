@@ -15,7 +15,7 @@ class EasyDumpTable extends Command
      *
      * @var string
      */
-    protected $signature = 'table:dump {table} {--s|seed : Also run seeder} {--r|restore : Restore existing data}';
+    protected $signature = 'table:dump {table} {--s|seed : Also run seeder} {--r|restore : Restore existing data} {--class= : Specify the class name of the seeder}';
 
     /**
      * The console command description.
@@ -32,6 +32,7 @@ class EasyDumpTable extends Command
         $table = $this->argument('table');
         $seeder = $this->option('seed');
         $restore = $this->option('restore');
+        $seed_class = $this->option('class');
 
         try {
 
@@ -58,11 +59,15 @@ class EasyDumpTable extends Command
                 $this->info("$table has been updated successfully!");
 
                 if($seeder){
-                    $class = Str::studly(Str::singular($table));
 
-                    Artisan::call('db:seed --class='.$class.'Seeder');
-
-                    $this->info("$table data seeded successfully!");
+                    if($seed_class){
+                        Artisan::call('db:seed --class='.$seed_class);
+                        $this->info("$seed_class data seeded successfully!");
+                    }else{
+                        $class = Str::studly(Str::singular($table));
+                        Artisan::call('db:seed --class='.$class.'Seeder');
+                        $this->info("$table data seeded successfully!");
+                    }
                 }
 
                 if($restore){
