@@ -14,7 +14,7 @@ class DumpSeed extends Command
      *
      * @var string
      */
-    protected $signature = 'table:dump-seed {table} {--class=}';
+    protected $signature = 'table:fresh-seed {table} {--class=}';
 
     /**
      * The console This command seeds data into the specified table, deleting previous data..
@@ -51,12 +51,6 @@ class DumpSeed extends Command
                     $this->info("$table data seeded successfully!");
                 }
 
-                // if ($file) {
-                //     Artisan::call('db:seed', ['--class' => $file]);
-                // } else {
-                //     $singular = Str::singular(ucfirst($table));
-                //     Artisan::call('db:seed', ['--class' => "{$singular}Seeder"]);
-                // }
                 DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
                 $this->info($table . ' table has been cleaned and seeded successfully.');
