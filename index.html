@@ -75,7 +75,7 @@
           "make:dump-table - Update table with migration file without affecting other tables",
           "table:backup - Create a backup SQL file of the specified table",
           "table:restore - Restore the SQL file to the database table with optional delete flag",
-          "table:dump-seed - Seed data into the table, replacing previous data",
+          "table:fresh-seed - Seed data into the table, replacing previous data",
           "table:col - Simplify adding new migration files after the main table migration"
         ],
         "releaseNotes": "Initial release with features to enhance Laravel migration functionalities."
@@ -202,7 +202,7 @@
             the single table
           </li>
           <li>
-            <span class="keybinding__label">table:dump-seed ..</span> Removes
+            <span class="keybinding__label">table:fresh-seed ..</span> Removes
             previous seed data and updates with new seed data
           </li>
           <li>
